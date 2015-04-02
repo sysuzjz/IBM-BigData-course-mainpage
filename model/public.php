@@ -9,7 +9,8 @@
         "sql_password" => "",
         "sql_db" => "",
         "sql_error_log" => true,
-        "show_sql_error" => false
+        "show_sql_error" => false,
+        "timeOffset" => 3600 * 8
     );
     setSettings($setting);
     function setSettings($settings) {
@@ -28,12 +29,6 @@
             die("can't connect to the server");
         }
         mysql_select_db($defaultSetting["sql_db"],$con);
-    }
-
-    function redirectErrorPage($errorMsg, $redirectTime) {
-        setcookie("errorMsg", $errorMsg);
-        setcookie("redirectTime", $redirectTime);
-        header("Location: ../view/error.php");
     }
     
 ?>

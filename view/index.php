@@ -1,5 +1,4 @@
 <?php
-    include_once("../model/public.php");
     include_once("../presenter/public.action.php");
     $overview = getOverview();
     var_dump($overview);
