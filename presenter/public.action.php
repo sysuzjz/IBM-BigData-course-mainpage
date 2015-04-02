@@ -5,8 +5,12 @@
         return true;
     }
 
+    function isLogin() {
+        return isset($_SESSION["uname"]) && !empty($_SESSION["uname"]);
+    }
+
     function isTeacher($id = 0) {
-        return $_SESSION["level"] == 1;
+        return isset($_SESSION["level"]) && $_SESSION["level"] == 1;
     }
 
     function getOverview() {

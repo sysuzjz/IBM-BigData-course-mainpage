@@ -5,10 +5,19 @@
         $funcName = $postParam["func"];
         unset($postParam["func"]);
         $result = call_user_func($funcName, $postParam);
-        if(!$result) {
-            redirectErrorPage("操作失败", 5);
+
+        if(isset($result["isRedirect"]) && !$result["isRedirect"]) {
+            unset($result["isRedirect"]);
+            echo $result;
         } else {
-            redirectErrorPage("操作成功", 5);
+            $redirectTime = isset($result["redirectTime"]) ? $result["redirectTime"] : 3;
+            $redirectUrl = isset($result["redirectUrl"]) ? $result["redirectUrl"] : "./";
+            if(isset($result["status"]) && $result["status"]) {
+                $redirectMsg = isset($result["redirectMsg"]) ? $result["redirectMsg"] : "操作成功";
+            } else {
+                $redirectMsg = isset($result["redirectMsg"]) ? $result["redirectMsg"] : "操作失败";
+            }
+            redirectErrorPage($redirectMsg, $redirectTime, $redirectUrl);
         }
     } else {
         redirectErrorPage("函数名错误", 5);
@@ -20,23 +29,30 @@
             $_SESSION["uname"] = $param["uname"];
             $_SESSION["level"] = 1;
         }
-        return !empty($result);
+        return array("status" => !empty($result), "isRedirect" => true, "redirectTime" => 2);
+    }
+
+    function logout() {
+        $_SESSION = array();
+        return array("status" => true, "isRedirect" => true, "redirectMsg" => "退出成功", "redirectTime" => 3);
     }
 
     function updateOverview($param) {
         global $defaultSetting;
         $time = time() + $defaultSetting["timeOffset"];
-        return ActionModel::updateOverview($param["title"], $param["content"], $time);
+        $result = ActionModel::updateOverview($param["title"], $param["content"], $time);
+        return array("status" => $result, "isRedirect" => true, "redirectUrl" => "./edit_overview.php");
     }
 
     function updateInform($param) {
         global $defaultSetting;
         $time = time() + $defaultSetting["timeOffset"];
         if(!isset($param["id"]) || empty($param["id"])) {
-            return ActionModel::insertInform($param["title"], $param["content"], $time);
+            $result = ActionModel::insertInform($param["title"], $param["content"], $time);
         } else {
-            return ActionModel::updateInformById($param["id"], $param["title"], $param["content"], $time);
+            $result = ActionModel::updateInformById($param["id"], $param["title"], $param["content"], $time);
         }
+        return array("status" => $result, "isRedirect" => true, "redirectUrl" => "./informs.php");
     }
 
 ?>

@@ -1,5 +1,5 @@
 <?php 
-    include_once("../presenter/public.action.php");
+    include_once("./head.php");
     if(isset($_GET["id"])) {
         $inform = getInformById($_GET["id"]);
     }
@@ -7,13 +7,6 @@
         redirectErrorPage("该通知不存在或已被删除", 5);
     }
 ?>
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8">
-    <title><?=$inform["title"]?></title>
-</head>
-<body>
     <?php if(isTeacher()) { ?>
         <a href="edit_inform.php?id=<?=$inform['id']?>">编辑</a>
     <?php } ?>
@@ -22,5 +15,4 @@
     <div>
         <?= $inform["content"] ?>
     </div>
-</body>
-</html>
+<?php include_once("./foot.php"); ?>
