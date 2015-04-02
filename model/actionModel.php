@@ -7,14 +7,20 @@
         }
         public static function updateOverview($title, $content, $time) {
             $data = array("title" => $title, "content" => $content, "time" => $time);
-            $result = update("overview", $data);
+            $con = array("id" => 1);
+            $result = update("overview", $data, $con);
+            return $result;
+        }
+
+        public static function getInforms() {
+            $result = select("inform", "*", "", "time DESC");
             return $result;
         }
 
         public static function getInformById($id) {
             $con = array("id" => $id);
             $result = select("inform", "*", $con);
-            return $result[0];
+            return !empty($result) ? $result[0] : $result;
         }
 
         public static function updateInformById($id, $title, $content, $time) {

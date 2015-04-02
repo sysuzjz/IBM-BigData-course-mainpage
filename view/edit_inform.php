@@ -15,7 +15,9 @@
     <title>概括编辑</title>
 </head>
 <body>
-    <form action="../presenter/edit_overview.action.php" method="post">
+    <form action="../presenter/admin.action.php" method="post">
+        <input type="hidden" name="func" value="updateInform" />
+        <input type="hidden" name="id" value="<?= isset($_GET['id']) ? $_GET['id'] : '' ?>">
         标题：<input type="text" name="title" value="<?= isset($_GET['id']) ? $inform['title'] : "" ?>" />
         <script id="container" name="content" type="text/plain"><?= isset($_GET['id']) ? $inform['content'] : "" ?></script>
         <input type="submit" value="提交" />

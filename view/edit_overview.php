@@ -13,7 +13,8 @@
     <title>概括编辑</title>
 </head>
 <body>
-    <form action="../presenter/edit_overview.action.php" method="post">
+    <form action="../presenter/admin.action.php" method="post">
+        <input type="hidden" name="func" value="updateOverview" />
         标题：<input type="text" name="title" value="<?=$overview['title']?>" />
         <script id="container" name="content" type="text/plain"><?=$overview['content']?></script>
         <input type="submit" value="提交" />
