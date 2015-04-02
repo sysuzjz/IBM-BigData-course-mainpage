@@ -55,4 +55,8 @@
         return array("status" => $result, "isRedirect" => true, "redirectUrl" => "./informs.php");
     }
 
+    function uploadFile() {
+        
+    }
+
 ?>
