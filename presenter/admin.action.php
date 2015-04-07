@@ -34,7 +34,7 @@
 
     function logout() {
         $_SESSION = array();
-        return array("status" => true, "isRedirect" => true, "redirectMsg" => "退出成功", "redirectTime" => 3);
+        return array("status" => true, "isRedirect" => true, "redirectMsg" => "退出成功", "redirectTime" => 2);
     }
 
     function updateOverview($param) {
@@ -56,7 +56,7 @@
     }
 
     function uploadFile() {
-        
+
     }
 
 ?>
