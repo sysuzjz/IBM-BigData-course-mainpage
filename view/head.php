@@ -29,7 +29,7 @@
 
     <div id="index">
         <div class="container">
-            <ul>
+            <ul id="menu">
                 <li>
                     <a class="selectedItem" href="index.php">主页</a>
                 </li>
