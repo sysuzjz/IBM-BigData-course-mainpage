@@ -1,5 +1,6 @@
 <?php
     require_once("setting.php");
+    $DIR = array("CSS" => "../static/CSS/", "JS" => "../static/JS/", "IMG" => "../static/IMG/", "UPLOAD" => "../upload/");
     $defaultSetting = array(
         "session_enable" => true,
         "session_name" => "",

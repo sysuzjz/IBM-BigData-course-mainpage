@@ -41,7 +41,7 @@
         global $defaultSetting;
         $time = time() + $defaultSetting["timeOffset"];
         $result = ActionModel::updateOverview($param["title"], $param["content"], $time);
-        return array("status" => $result, "isRedirect" => true, "redirectUrl" => "./edit_overview.php");
+        return array("status" => $result, "isRedirect" => true, "redirectUrl" => "./index.php");
     }
 
     function updateInform($param) {
@@ -55,8 +55,18 @@
         return array("status" => $result, "isRedirect" => true, "redirectUrl" => "./informs.php");
     }
 
-    function uploadFile() {
-
+    function upload($param) {
+        if(!isset($_FILES["file"])) {
+            return array("status" => false, "isRedirect" => true, "redirectMsg" => "文件不能为空", "redirectTime" => 2);
+        }
+        if($_FILES["file"]["error"]) {
+            return array("status" => false, "isRedirect" => true, "redirectMsg" => $_FILES["file"]["error"], "redirectTime" => 2);   
+        }
+        // $allowType = array();
+        $uploadDir = $GLOBALS["DIR"]['UPLOAD'];
+        $newName = iconv("utf-8", "gb2312", $_FILES["file"]["name"]);
+        $result = move_uploaded_file($_FILES["file"]["tmp_name"], $uploadDir.$newName);
+        return array("status" => $result, "isRedirect" => true, "redirectMsg" => $newName, "redirectTime" => 10);
     }
 
 ?>
