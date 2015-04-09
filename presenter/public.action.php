@@ -27,6 +27,11 @@
         return $inform;
     }
 
+    function getResources() {
+        $resources = ActionModel::getUploads();
+        return $resources;
+    }
+
     function redirectErrorPage($errorMsg, $redirectTime, $redirectUrl = "./") {
         setcookie("errorMsg", $errorMsg, time() + 60, "/");
         setcookie("redirectTime", $redirectTime, time() + 60, "/");

@@ -37,7 +37,7 @@
                     <a href="informs.php">通知</a>
                 </li>
                 <li>
-                    <a href="resource.html">资源</a>
+                    <a href="resources.php">资源</a>
                 </li>
             </ul>
         </div>

@@ -66,7 +66,11 @@
         $uploadDir = $GLOBALS["DIR"]['UPLOAD'];
         $newName = iconv("utf-8", "gb2312", $_FILES["file"]["name"]);
         $result = move_uploaded_file($_FILES["file"]["tmp_name"], $uploadDir.$newName);
-        return array("status" => $result, "isRedirect" => true, "redirectMsg" => $newName, "redirectTime" => 10);
+        if($result) {
+            $time = time() + $GLOBALS['defaultSetting']['timeOffset'];
+            $result = ActionModel::uploadFile($_FILES["file"]["name"], $uploadDir.$_FILES["file"]["name"], $_SESSION["uname"], $time);
+        }
+        return array("status" => $result, "isRedirect" => true, "redirectTime" => 10);
     }
 
 ?>

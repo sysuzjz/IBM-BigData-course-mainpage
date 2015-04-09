@@ -35,5 +35,15 @@
             $result = insert("inform", $data);
             return $result;
         }
+
+        public static function uploadFile($name, $path, $editor, $time) {
+            $data = array("name" => $name, "path" => $path, "editor" => $editor, "time" => $time);
+            $result = insert("upload", $data);
+            return $result;
+        }
+        public static function getUploads() {
+            $result = select("upload", "*", "", "time DESC");
+            return $result;
+        }
     }
 ?>
