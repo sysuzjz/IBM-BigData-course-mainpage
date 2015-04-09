@@ -11,4 +11,5 @@
         }
     </script>
     <script type="text/javascript"></script>
+    <script type="text/javascript" src="<?=$DIR['JS']?>head.js"></script>
 </html>
