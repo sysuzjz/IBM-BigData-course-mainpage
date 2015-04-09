@@ -1,3 +1,4 @@
+        </div>
     </body>
     <script type="text/javascript" src="../lib/ueditor/ueditor.config.js"></script>
     <!-- 编辑器源码文件 -->
