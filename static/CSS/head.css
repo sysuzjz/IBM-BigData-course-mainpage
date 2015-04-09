@@ -41,7 +41,7 @@ a {
 	border-bottom: 1px solid #e3e1d9;
 }
 
-ul {
+#menu {
 	float: left;
 	list-style: outside none none;
 	position: relative;
@@ -49,11 +49,11 @@ ul {
 	margin: 0px;
 }
 
-li {
+#menu li {
 	float: left;
 }
 
-li a {
+#menu li a {
 	font-size: 20px;
 	display: block;
 	position: relative;
@@ -64,7 +64,7 @@ li a {
 	text-align: center;
 }
 
-li a:hover {
+#menu li a:hover {
 	background: #B70E4F;
 	color: white;
 }
