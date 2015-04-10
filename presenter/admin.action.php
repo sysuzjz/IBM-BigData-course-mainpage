@@ -41,7 +41,7 @@
         global $defaultSetting;
         $time = time() + $defaultSetting["timeOffset"];
         $result = ActionModel::updateOverview($param["title"], $param["content"], $time);
-        return array("status" => $result, "isRedirect" => true, "redirectUrl" => "./index.php");
+        return array("status" => $result, "isRedirect" => true, "redirectUrl" => "../view/index.php");
     }
 
     function updateInform($param) {
@@ -52,7 +52,7 @@
         } else {
             $result = ActionModel::updateInformById($param["id"], $param["title"], $param["content"], $time);
         }
-        return array("status" => $result, "isRedirect" => true, "redirectUrl" => "./informs.php");
+        return array("status" => $result, "isRedirect" => true, "redirectUrl" => "../view/informs.php");
     }
 
     function upload($param) {
@@ -70,7 +70,19 @@
             $time = time() + $GLOBALS['defaultSetting']['timeOffset'];
             $result = ActionModel::uploadFile($_FILES["file"]["name"], $uploadDir.$_FILES["file"]["name"], $_SESSION["uname"], $time);
         }
-        return array("status" => $result, "isRedirect" => true, "redirectTime" => 10);
+        return array("status" => $result, "isRedirect" => true, "redirectUrl" => "../view/resources.php", "redirectTime" => 3);
+    }
+
+    function deleteInform($param) {
+        $id = $param["id"];
+        $result = ActionModel::deleteById("inform", $id);
+        return array("status" => $result, "isRedirect" => true, "redirectUrl" => "../view/informs.php","redirectTime" => 3);
+    }
+
+    function deleteResource($param) {
+        $id = $param["id"];
+        $result = ActionModel::deleteById("upload", $id);
+        return array("status" => $result, "isRedirect" => true, "redirectUrl" => "../view/resources.php","redirectTime" => 3);
     }
 
 ?>

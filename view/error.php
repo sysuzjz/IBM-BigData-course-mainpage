@@ -11,7 +11,7 @@
 </head>
 <body>
     <h1><?= $errorMsg ?></h1>
-    <h2>页面将在<span id="redirectTime"><?= $redirectTime ?></span>秒后跳转回<a href="<?=$redirectUrl?>">首页</a></h2>
+    <h2>页面将在<span id="redirectTime"><?= $redirectTime ?></span>秒后跳转，或<a href="<?=$redirectUrl?>">点此返回</a></h2>
 </body>
 <script type="text/javascript">
     var timeNode = document.getElementById("redirectTime"),

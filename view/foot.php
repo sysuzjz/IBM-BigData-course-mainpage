@@ -15,4 +15,6 @@
     </script>
     <script type="text/javascript"></script>
     <script type="text/javascript" src="<?=$DIR['JS']?>public.js"></script>
+    <script type="text/javascript" src="<?=$DIR['JS']?>head.js"></script>
+    <script type="text/javascript" src="<?=$DIR['JS']?>body.all.js"></script>
 </html>

@@ -1,14 +1,21 @@
 function showLogin() {
-	document.getElementById('login').style.display = "block";
+    showElementById("cover");
+    showElementById("login");
 }
 
 function hideLogin() {
-	document.getElementById('login').style.display = "none";
+    hideElementById("cover");
+    hideElementById("login");
 }
 
 function init() {
-	document.getElementById('button-login').onclick = showLogin;
-	//document.getElementById('button-logout').onclick = hideLogin;
+    var node = null; 
+    if(node = document.getElementById('button-login')) {
+        node.onclick = showLogin;
+    }
+    if(node = document.getElementById('button-cancel')) {
+        node.onclick = hideLogin;
+    }
 }
 
 window.onload = init;

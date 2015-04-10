@@ -45,5 +45,11 @@
             $result = select("upload", "*", "", "time DESC");
             return $result;
         }
+
+        public static function deleteById($table, $id) {
+            $cond = array("id" => $id);
+            $result = delete($table, $cond);
+            return $result;
+        }
     }
 ?>
