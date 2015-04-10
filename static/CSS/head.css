@@ -5,9 +5,10 @@
 }
 
 #header {
-	border-bottom: 1px solid #e3e1d9;
 	color: #858278;
 	height: 111px;
+	padding-top: 10px;
+	border-bottom: 1px solid #e3e1d9;
 	overflow: hidden;
 }
 
@@ -55,8 +56,13 @@
 
 #login {
 	display: none;
+	position: relative;
+	background-color: #fff;
 	width: 300px;
 	margin: 0px auto;
+	padding: 45px;
+	border: 1px solid #e3e1d9;
+	z-index: 30;
 }
 
 .inform {
@@ -65,8 +71,25 @@
 	margin: 10px;
 }
 
-#submit {
+.submit {
 	display: block;
-	width: 150px;
+	width: 50%;
 	margin: 0 auto;
+}
+
+#button-submit, #button-cancel {
+	background-color: white;
+	border: 1px solid #e3e1d9;
+	padding: 5px;
+	margin: 10px 10px;
+}
+
+#cover {
+	display: none;
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	opacity: 0.5;
+	background-color: black;
+	z-index: 20;
 }

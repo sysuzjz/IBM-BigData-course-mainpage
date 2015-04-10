@@ -12,6 +12,7 @@
     <link rel="stylesheet" type="text/css" href="<?=$DIR['CSS']?>body.css" />
 </head>
 <body>
+    <div id="cover"></div>
     <div id="header">
         <div class="container">
             <h1 id="head-title">课程信息网</h1>
@@ -20,7 +21,7 @@
                     <button id="button-login">教师登录</button>
                 </div>
             <?php } else { ?>
-                <form action="../presenter/admin.action.php" method="post" id="right">
+                <form action="../presenter/admin.action.php" method="post" class="right">
                     <input type="hidden" name="func" value="logout" />
                     <input type="submit" value="退出登录" id="button-logout" />
                 </form>
@@ -52,9 +53,12 @@
                     <label class="inform">密码：</label>
                     <input type="password" name="password" placeholder="密码" />
                 </div>
-                <div id="submit">
+                <div class="submit">
                     <input type="checkbox" name="autoLogin" checked="checked" />自动登录
-                    <input type="submit" value="提交" />
+                </div>
+                <div class="submit">
+                    <input type="submit" value="提交" id="button-submit" />
+                    <input type="button" value="取消" id="button-cancel" />
                 </div>
             </form>
         </div>
