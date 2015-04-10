@@ -3,7 +3,7 @@ function showLogin() {
 }
 
 function hideLogin() {
-	document.getElementById('login').style.display = "none"
+	document.getElementById('login').style.display = "none";
 }
 
 function init() {

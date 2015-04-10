@@ -7,15 +7,16 @@
 <head>
     <meta charset="utf-8">
     <title>课程网站</title>
-    <link rel="stylesheet" type="text/css" href="<?=$DIR['CSS']?>head.css">
-    <link rel="stylesheet" type="text/css" href="<?=$DIR['CSS']?>body.css">
+    <link rel="stylesheet" type="text/css" href="<?=$DIR['CSS']?>public.css" />
+    <link rel="stylesheet" type="text/css" href="<?=$DIR['CSS']?>head.css" />
+    <link rel="stylesheet" type="text/css" href="<?=$DIR['CSS']?>body.css" />
 </head>
 <body>
     <div id="header">
         <div class="container">
-            <p id="left">课程信息网</p>
+            <h1 id="head-title">课程信息网</h1>
             <?php if(!isLogin()) { ?>
-                <div id="right">
+                <div class="right">
                     <button id="button-login">教师登录</button>
                 </div>
             <?php } else { ?>
@@ -26,23 +27,19 @@
             <?php } ?>
         </div>
     </div>
-
-    <div id="index">
-        <div class="container">
-            <ul id="menu">
-                <li>
-                    <a class="selectedItem" href="index.php">主页</a>
-                </li>
-                <li>
-                    <a href="informs.php">通知</a>
-                </li>
-                <li>
-                    <a href="resources.php">资源</a>
-                </li>
-            </ul>
-        </div>
+    <div class="clear-float">
+        <ul id="menu">
+            <li class="selectedItem">
+                <a href="index.php">主页</a>
+            </li>
+            <li>
+                <a href="informs.php">通知</a>
+            </li>
+            <li>
+                <a href="resources.php">资源</a>
+            </li>
+        </ul>
     </div>
-    
     <div id="bodybox">
         <div id="login">
             <form action="../presenter/admin.action.php" method="post">
@@ -61,4 +58,6 @@
                 </div>
             </form>
         </div>
+
+        <div class="container">
     
