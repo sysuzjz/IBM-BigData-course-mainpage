@@ -47,11 +47,11 @@
                 <input type="hidden" name="func" value="login" />
                 <div>
                     <label class="inform">用户名：</label>
-                    <input type="text" name="uname" placeholder="用户名" />
+                    <input type="text" name="uname" placeholder="用户名" required="required" />
                 </div>
                 <div>
                     <label class="inform">密码：</label>
-                    <input type="password" name="password" placeholder="密码" />
+                    <input type="password" name="password" placeholder="密码" required="required" />
                 </div>
                 <div id="autoLogin">
                     <input type="checkbox" name="autoLogin" checked="checked" />自动登录

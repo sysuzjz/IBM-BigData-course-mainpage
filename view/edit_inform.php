@@ -11,7 +11,8 @@
     <form action="../presenter/admin.action.php" method="post">
         <input type="hidden" name="func" value="updateInform" />
         <input type="hidden" name="id" value="<?= isset($_GET['id']) ? $_GET['id'] : '' ?>">
-        标题：<input type="text" name="title" value="<?= isset($_GET['id']) ? $inform['title'] : "" ?>" />
+        <label class="inform">标题：</label>
+        <input type="text" name="title" value="<?= isset($_GET['id']) ? $inform['title'] : "" ?>" required="required" />
         <script id="container" name="content" type="text/plain"><?= isset($_GET['id']) ? $inform['content'] : "" ?></script>
         <input type="submit" value="提交" />
     </form>

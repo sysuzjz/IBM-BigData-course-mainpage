@@ -7,6 +7,14 @@ a {
     color: #B70E4F;
 }
 
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 5px;
+}
+
 .float-right {
     float: right;
 }

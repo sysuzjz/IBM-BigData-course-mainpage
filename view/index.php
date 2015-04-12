@@ -3,11 +3,13 @@
     $overview = getOverview();
 ?>
     <h2>课程概括</h2>
-    <?php if(isTeacher()) { ?>
-        <a href="./edit_overview.php">编辑概括</a>
-    <?php } ?>
-	    <h1><?=$overview["title"]?></h1>
-	    <p class="float-right"><?=date("Y-m-d H:i:s",$overview["time"])?></p>
+    <div class="subhead clear-float">
+        <?php if(isTeacher()) { ?>
+            <a href="./edit_overview.php" class="float-left">编辑概括</a>
+        <?php } ?>
+	    <span class="float-right">发表时间：<?=date("Y-m-d H:i:s",$overview["time"])?></span>
+        
+    </div>
 	    <div><p><?=$overview["content"]?></p></div>
 
 <?php include_once("./foot.php"); ?>
