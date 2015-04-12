@@ -5,9 +5,9 @@
     }
     $overview = getOverview();
 ?>
+    <h2>概括编辑</h2>
     <form action="../presenter/admin.action.php" method="post">
         <input type="hidden" name="func" value="updateOverview" />
-        标题：<input type="text" name="title" value="<?=$overview['title']?>" />
         <script id="container" name="content" type="text/plain"><?=$overview['content']?></script>
         <input type="submit" value="提交" />
     </form>

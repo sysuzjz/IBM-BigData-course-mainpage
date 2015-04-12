@@ -2,14 +2,26 @@ body, ul {
     margin: 0;
     padding: 0;
 }
-
-.right {
-    float: right;
-}
-
 a {
     text-decoration: none;
     color: #B70E4F;
+}
+
+.float-right {
+    float: right;
+}
+.float-left {
+    float: left;
+}
+
+.align-right {
+    text-align: right;
+}
+.align-left {
+    text-align: left;
+}
+.align-center {
+    text-align: center;
 }
 
 .clear-float:after {

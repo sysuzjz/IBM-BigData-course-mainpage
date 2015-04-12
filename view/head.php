@@ -17,18 +17,18 @@
         <div class="container">
             <h1 id="head-title">课程信息网</h1>
             <?php if(!isLogin()) { ?>
-                <div class="right">
+                <div class="float-right">
                     <button id="button-login">教师登录</button>
                 </div>
             <?php } else { ?>
-                <form action="../presenter/admin.action.php" method="post" class="right">
+                <form action="../presenter/admin.action.php" method="post" class="float-right">
                     <input type="hidden" name="func" value="logout" />
                     <input type="submit" value="退出登录" id="button-logout" />
                 </form>
             <?php } ?>
         </div>
     </div>
-    <div class="clear-float">
+    <div class="clear-float" id="menu-container">
         <ul id="menu">
             <li>
                 <a href="index.php">主页</a>

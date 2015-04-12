@@ -1,7 +1,8 @@
 <?php
     include_once("./head.php");
     $resources = getResources();
-?> 
+?>
+    <h2>资源列表</h2>
     <table id="table-container" data-func="deleteResource">
         <thead>
             <tr>

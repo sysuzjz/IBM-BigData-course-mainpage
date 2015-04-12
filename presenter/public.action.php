@@ -6,7 +6,6 @@
     }
 
     function isLogin() {
-        session_name("ibm");
         return isset($_SESSION["uname"]) && !empty($_SESSION["uname"]);
     }
 

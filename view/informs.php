@@ -2,6 +2,7 @@
     include_once("./head.php");
     $informs = getInforms();
 ?>
+    <h2>通知列表</h2>
     <table id="table-container" data-func="deleteInform">
         <thead>
             <tr>

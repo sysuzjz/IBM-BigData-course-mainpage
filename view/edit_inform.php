@@ -7,6 +7,7 @@
         $inform = getInformById($_GET['id']);
     }
 ?>
+    <h2>通知编辑</h2>
     <form action="../presenter/admin.action.php" method="post">
         <input type="hidden" name="func" value="updateInform" />
         <input type="hidden" name="id" value="<?= isset($_GET['id']) ? $_GET['id'] : '' ?>">
