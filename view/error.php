@@ -14,17 +14,20 @@
     <h2>页面将在<span id="redirectTime"><?= $redirectTime ?></span>秒后跳转，或<a href="<?=$redirectUrl?>">点此返回</a></h2>
 </body>
 <script type="text/javascript">
-    var timeNode = document.getElementById("redirectTime"),
-        time = parseInt(timeNode.innerText);
-    for(var i = 1; i <= time; i++) {
-        (function(i) {
+    window.onload = function() {
+        var timeNode = document.getElementById("redirectTime"),
+            time = parseInt(timeNode.innerHTML);
+        countDown(time);
+        function countDown(timeout) {
+            timeNode.innerHTML = timeout;
+            if(timeout <= 0) {
+                window.location.href = "<?= $redirectUrl ?>";
+                return;
+            }
             setTimeout(function() {
-                timeNode.innerText = (time - i);
-                if(i == time) {
-                    window.location.href = "<?= $redirectUrl ?>";
-                }
-            }, i * 1000);
-        })(i)
+                return countDown(timeout - 1);
+            }, 1000);
+        }
     }
 
 </script>

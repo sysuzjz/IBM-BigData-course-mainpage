@@ -4,7 +4,7 @@
         return $GLOBALS['sqlError'];
     }
     function setSqlError() {
-        $GLOBALS['variable'] = $GLOBALS['defaultSetting']['sql_error_log'] ? mysql_error() : "";
+        $GLOBALS['sqlError'] = SQL_ERROR_LOG ? mysql_error() : "";
     }
 
     function showSqlErr($err, $type = "html") {

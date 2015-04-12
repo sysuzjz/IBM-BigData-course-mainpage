@@ -2,16 +2,17 @@
     require_once("setting.php");
     $DIR = array("CSS" => "../static/CSS/", "JS" => "../static/JS/", "IMG" => "../static/IMG/", "UPLOAD" => "../upload/");
     $defaultSetting = array(
-        "session_enable" => true,
-        "session_name" => "",
-        "sql_name" => "mysql",
-        "sql_address" => "localhost",
-        "sql_uname" => "root",
-        "sql_password" => "",
-        "sql_db" => "",
-        "sql_error_log" => true,
-        "show_sql_error" => false,
-        "timeOffset" => 3600 * 8
+        "DOMAIN" => "localhost",
+        "PATH" => "/",
+        "SESSION_NAME" => "",
+        "SESSION_LIFETIME" => 3600 * 24 * 30,
+        "SQL_ADDRESS" => "localhost",
+        "SQL_UNAME" => "root",
+        "SQL_PASSWORD" => "",
+        "DB_NAME" => "",
+        "SQL_ERROR_LOG" => true,
+        "SHOW_SQL_ERROR" => false,
+        "TIMEOFFSET" => 3600 * 8
     );
     setSettings($setting);
     function setSettings($settings) {
@@ -21,15 +22,17 @@
                 $defaultSetting[$key] = $value;
             }
         }
-        if($defaultSetting["session_enable"]) {
-            session_name($defaultSetting["session_name"]);
-            session_start();
+        foreach ($defaultSetting as $key => $value) {
+            define($key, $value);
         }
-        $con = mysql_connect($defaultSetting["sql_address"], $defaultSetting["sql_uname"], $defaultSetting["sql_password"]);
+
+        session_name(SESSION_NAME);
+        session_start();
+        $con = mysql_connect(SQL_ADDRESS, SQL_UNAME, SQL_PASSWORD);
         if(!$con) {
             die("can't connect to the server");
         }
-        mysql_select_db($defaultSetting["sql_db"],$con);
+        mysql_select_db(DB_NAME, $con);
     }
     
 ?>

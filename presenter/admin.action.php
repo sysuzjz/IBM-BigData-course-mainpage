@@ -28,6 +28,9 @@
         if(!empty($result)) {
             $_SESSION["uname"] = $param["uname"];
             $_SESSION["level"] = 1;
+            if(isset($param["autoLogin"]) && !empty($param["autoLogin"])) {
+                setcookie(session_name(), session_id(), time() + TIMEOFFSET + SESSION_LIFETIME, PATH, DOMAIN);
+            }
         }
         return array("status" => !empty($result), "isRedirect" => true, "redirectTime" => 2);
     }
@@ -38,15 +41,13 @@
     }
 
     function updateOverview($param) {
-        global $defaultSetting;
-        $time = time() + $defaultSetting["timeOffset"];
+        $time = time() + TIMEOFFSET;
         $result = ActionModel::updateOverview($param["title"], $param["content"], $time);
         return array("status" => $result, "isRedirect" => true, "redirectUrl" => "../view/index.php");
     }
 
     function updateInform($param) {
-        global $defaultSetting;
-        $time = time() + $defaultSetting["timeOffset"];
+        $time = time() + TIMEOFFSET;
         if(!isset($param["id"]) || empty($param["id"])) {
             $result = ActionModel::insertInform($param["title"], $param["content"], $time);
         } else {
@@ -67,7 +68,7 @@
         $newName = iconv("utf-8", "gb2312", $_FILES["file"]["name"]);
         $result = move_uploaded_file($_FILES["file"]["tmp_name"], $uploadDir.$newName);
         if($result) {
-            $time = time() + $GLOBALS['defaultSetting']['timeOffset'];
+            $time = time() + TIMEOFFSET;
             $result = ActionModel::uploadFile($_FILES["file"]["name"], $uploadDir.$_FILES["file"]["name"], $_SESSION["uname"], $time);
         }
         return array("status" => $result, "isRedirect" => true, "redirectUrl" => "../view/resources.php", "redirectTime" => 3);
