@@ -40,6 +40,61 @@
                 <a href="resources.php">资源</a>
             </li>
         </ul>
+        <ul class="submenu" data-type="overview">
+            <li>
+                <a href="description.php">课程描述</a>
+            </li>
+            <li>
+                <a href="summary.php">内容简介</a>
+            </li>
+            <li>
+                <a href="plan.php">教学计划</a>
+            </li>
+            <li>
+                <a href="outline.php">实验大纲</a>
+            </li>
+        </ul>
+        <ul class="submenu" data-type="download">
+            <li>
+                <a href="ppt_download.php">PPT下载</a>
+            </li>
+            <li>
+                <a href="video_download.php">相关视频</a>
+            </li>
+        </ul>
+        <ul class="submenu" data-type="lab">
+            <li>
+                <a href="lab1.php">数据分析基础</a>
+            </li>
+            <li>
+                <a href="lab2.php">数据挖掘</a>
+            </li>
+            <li>
+                <a href="lab3.php">商务智能</a>
+            </li>
+            <li>
+                <a href="lab4.php">大数据处理</a>
+            </li>
+        </ul>
+        <ul class="submenu" data-type="homework">
+            <li>
+                <a href="homework.php">作业习题</a>
+            </li>
+            <li>
+                <a href="answer.php">参考答案</a>
+            </li>
+        </ul>
+        <ul class="submenu" data-type="test">
+            <li>
+                <a href="test_outline.php">考试大纲</a>
+            </li>
+            <li>
+                <a href="simulating1.php">模拟卷1</a>
+            </li>
+            <li>
+                <a href="simulating2.php"></a>
+            </li>
+        </ul>
     </div>
     <div id="bodybox">
         <div id="login">
