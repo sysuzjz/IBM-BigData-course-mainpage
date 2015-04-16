@@ -28,19 +28,34 @@
             <?php } ?>
         </div>
     </div>
-    <div class="clear-float" id="menu-container">
-        <ul id="menu">
+    <div id="menu-container">
+        <ul id="menu" class="clear-float">
             <li>
-                <a href="index.php">主页</a>
+                <a href="#" data-type="overview">课程概括</a>
             </li>
             <li>
-                <a href="informs.php">通知</a>
+                <a href="#" data-type="download">课堂教案</a>
             </li>
             <li>
-                <a href="resources.php">资源</a>
+                <a href="#" data-type="lab">课程实验</a>
+            </li>
+            <li>
+                <a href="#" data-type="homework">课后作业</a>
+            </li>
+            <li>
+                <a href="#" data-type="test">考核内容</a>
+            </li>
+            <li>
+                <a href="references.php">参考资料</a>
+            </li>
+            <li>
+                <a href="resources.php">网上资源</a>
+            </li>
+            <li>
+                <a href="assessment.php">学生评价</a>
             </li>
         </ul>
-        <ul class="submenu" data-type="overview">
+        <ul class="submenu clear-float" data-type="overview">
             <li>
                 <a href="description.php">课程描述</a>
             </li>
@@ -54,7 +69,7 @@
                 <a href="outline.php">实验大纲</a>
             </li>
         </ul>
-        <ul class="submenu" data-type="download">
+        <ul class="submenu clear-float" data-type="download">
             <li>
                 <a href="ppt_download.php">PPT下载</a>
             </li>
@@ -62,7 +77,7 @@
                 <a href="video_download.php">相关视频</a>
             </li>
         </ul>
-        <ul class="submenu" data-type="lab">
+        <ul class="submenu clear-float" data-type="lab">
             <li>
                 <a href="lab1.php">数据分析基础</a>
             </li>
@@ -76,7 +91,7 @@
                 <a href="lab4.php">大数据处理</a>
             </li>
         </ul>
-        <ul class="submenu" data-type="homework">
+        <ul class="submenu clear-float" data-type="homework">
             <li>
                 <a href="homework.php">作业习题</a>
             </li>
@@ -84,7 +99,7 @@
                 <a href="answer.php">参考答案</a>
             </li>
         </ul>
-        <ul class="submenu" data-type="test">
+        <ul class="submenu clear-float" data-type="test">
             <li>
                 <a href="test_outline.php">考试大纲</a>
             </li>
@@ -92,7 +107,7 @@
                 <a href="simulating1.php">模拟卷1</a>
             </li>
             <li>
-                <a href="simulating2.php"></a>
+                <a href="simulating2.php">模拟卷2</a>
             </li>
         </ul>
     </div>
