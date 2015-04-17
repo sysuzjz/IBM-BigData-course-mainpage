@@ -23,27 +23,24 @@
     font-size: 15px;
 }
 
-#menu-container {
+#menu {
+    margin: 0 auto;
     border-top: 1px solid #e3e1d9;
     border-bottom: 1px solid #e3e1d9;
-}
-
-#menu {
     list-style: outside none;
-    width: 1030px;
-    margin: 0 auto;
     text-align: center;
 }
 
 #menu-container li {
     display: block;
     float: left;
-    /*margin: 10px 5px;*/
-    width: 80px;
+    min-width: 80px;
     height: 21px;
     padding: 10px;
     font-size: 20px;
+    text-align: center;
 }
+
 
 #menu-container li:hover, .selectedItem {
     background: #B70E4F;
@@ -55,9 +52,16 @@
 
 .submenu {
     display: none;
+    position: relative;
+    left: 0;
+    border-bottom: 1px solid #e3e1d9;
 }
-.submenu li {
+#menu-container .submenu li {
     font-size: 16px;
+}
+#default-submenu {
+    display: block;
+    visibility: hidden;
 }
 
 #bodybox {

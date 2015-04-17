@@ -16,7 +16,7 @@ function addClassName(node, className) {
     }
 }
 
-var addEvent = function(type, callback) {  
+function addEvent(type, callback) {  
     if (window.attachEvent) { // IE  
         this.attachEvent.call(this, "on" + type, callback);  
     } else if (window.addEventListener) {  
@@ -26,12 +26,22 @@ var addEvent = function(type, callback) {
     }  
     return this;  
 }
-
-function delegate(node, childNodeClass, eventType, func) {
+function delegate(node, childNodeSelector, eventType, func) {
     addEvent.call(node, eventType, function(event) {
-        var classes = event.target.className.split(" ");
-        if(classes.indexOf(childNodeClass) > -1) {
-            func(event);
+        if(isClassSelector(childNodeSelector)) {
+            var className = splitSelector(childNodeSelector)["className"];
+            if(hasClass(event.target, className)) {
+                func(event);
+            }
+        } else if(isIdSelector(childNodeSelector)) {
+            var id = splitSelector(childNodeSelector)["id"];
+            if(event.target.id == id) {
+                func(event);
+            }
+        } else {
+            if(event.target.nodeName.toLowerCase() == childNodeSelector.toLowerCase()) {
+                func(event);
+            }
         }
     })
 }
@@ -44,18 +54,17 @@ function getChildNodes(node, selector) {
     if(!selector) {
         // all tags
         result = getAllChildNodes(node);
-    } else if(selector.indexOf(".") > -1) {
+    } else if(isClassSelector(selector)) {
         // tags with class        
-        var temp = selector.split("."),
-            tagName = temp[0],
-            className = temp[1];
+        var temp = splitSelector(selector),
+            tagName = temp["tagName"],
+            className = temp["className"];
         result = getChildNodesByClassName(node, className, tagName);
     } else {
         result = getChildNodesByTagName(node, selector);
     }
     return result;
 }
-
 function getAllChildNodes(node) {
     var childNodes = node.childNodes;
     var len = childNodes.length,
@@ -68,7 +77,6 @@ function getAllChildNodes(node) {
     }
     return result;
 }
-
 function getChildNodesByTagName(node, tagName) {
     var childNodes = getAllChildNodes(node),
         result = Array();
@@ -79,7 +87,6 @@ function getChildNodesByTagName(node, tagName) {
     }
     return result;
 }
-
 function getChildNodesByClassName(node, className, tagName) {
     var childNodes = Array(),
         result = Array();
@@ -108,4 +115,77 @@ function hasClass(node, className) {
         }
         return false;
     }
+}
+
+
+
+function isClassSelector(selector) {
+    return selector.indexOf(".") > -1;
+}
+function isIdSelector(selector) {
+    return selector.indexOf("#") > -1;
+}
+function splitSelector(selector) {
+    if(isClassSelector(selector)) {
+        var arr = selector.split(".");
+        return {
+            "tagName": arr[0],
+            "className": arr[1]
+        };
+    } else if(isIdSelector(selector)) {
+        var arr = selector.split("#");
+        return {
+            "tagName": arr[0],
+            "id": arr[1]
+        };
+    } else {
+        return selector;
+    }
+}
+
+
+
+function each(nodeArr, func) {
+    if(!(nodeArr instanceof Array)) {
+        return;
+    }
+    for(var i = 0, len = nodeArr.length; i < len; i++) {
+        func.call(nodeArr[i]);
+    }
+}
+
+function getWidth(node) {
+    var width = getStyle(node, "width");
+    if(width === "auto") {
+        width = node.offsetWidth;
+    }
+    return parseInt(width);
+}
+
+function getStyle(node, styleName) {
+    var computedStyle = null;
+    if(node.currentStyle) {
+        computedStyle = node.currentStyle;
+    } else {
+        computedStyle = window.getComputedStyle(node, null);
+    }
+    return computedStyle[styleName];
+}
+
+function setStyle(node, styleName, styleValue) {
+    var pxArr = ["width", "height", "lineHeight", "left", "top", "padding", "paddingLeft", "paddingRight", "paddingTop", "paddingBottom", "fontSize"];
+    var unit = inArray(pxArr, styleName) ? "px" : "";
+    node.style[styleName] = styleValue + unit;
+}
+
+function inArray(arr, value) {
+    if(!(arr instanceof Array) || !arr || !value) {
+        return false;
+    }
+    for(var i = 0, len = arr.length; i < len; i++) {
+        if(arr[i] === value) {
+            return true;
+        }
+    }
+    return false;
 }

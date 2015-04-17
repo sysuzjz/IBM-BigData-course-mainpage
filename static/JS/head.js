@@ -1,3 +1,14 @@
+window.onload = init;
+function init() {
+    var node = null; 
+    if(node = document.getElementById('button-login')) {
+        node.onclick = showLogin;
+    }
+    if(node = document.getElementById('button-cancel')) {
+        node.onclick = hideLogin;
+    }
+    select();
+}
 function showLogin() {
     showElementById("cover");
     showElementById("login");
@@ -25,15 +36,30 @@ function select () {
     }
 }
 
-function init() {
-    var node = null; 
-    if(node = document.getElementById('button-login')) {
-        node.onclick = showLogin;
-    }
-    if(node = document.getElementById('button-cancel')) {
-        node.onclick = hideLogin;
-    }
-    select();
-}
 
-window.onload = init;
+
+var menuNode = document.getElementById("menu");
+delegate(menuNode, "a", "mouseover", function(event) {
+    var type = event.target.getAttribute("data-type"),
+        submenus = getChildNodes(menuNode.parentNode, ".submenu"),
+        offsetLeft = event.target.offsetLeft,
+        menuLiWidth = getWidth(event.target);
+    each(submenus, function() {
+        setStyle(this, "display", "none");
+        if(this.getAttribute("data-type") == type) {
+            setStyle(this, "display", "inline-block");
+            var currentWidth = getWidth(this),
+                parentWidth = getWidth(this.parentNode),
+                left = offsetLeft + menuLiWidth / 2 - currentWidth / 2;
+            if(left < 0) { // 超出左侧
+                console.log(1);
+                setStyle(this, "left", 0);
+            } else if(menuLiWidth / 2 + currentWidth / 2 > parentWidth) { // 超出右侧
+                console.log("2");
+                setStyle(this, "right", 0);
+            } else {
+                setStyle(this, "left", left);
+            }
+        }
+    })
+})

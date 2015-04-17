@@ -1,6 +1,6 @@
 // 绑定删除按钮函数
 var tableNode = document.getElementById('table-container');
-delegate(tableNode, "delete-btn", "click", function(event) {
+delegate(tableNode, ".delete-btn", "click", function(event) {
     event.preventDefault();
     var func = tableNode.getAttribute("data-func"),
         id = event.target.getAttribute("data-id");

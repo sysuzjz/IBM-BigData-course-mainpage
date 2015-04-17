@@ -39,3 +39,7 @@ th, td {
     height: 0px;
     clear: both;
 }
+
+.hide {
+    display: none;
+}

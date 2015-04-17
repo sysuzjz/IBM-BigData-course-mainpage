@@ -28,7 +28,7 @@
             <?php } ?>
         </div>
     </div>
-    <div id="menu-container">
+    <div id="menu-container" class="container">
         <ul id="menu" class="clear-float">
             <li>
                 <a href="#" data-type="overview">课程概括</a>
@@ -55,6 +55,11 @@
                 <a href="assessment.php">学生评价</a>
             </li>
         </ul>
+        <ul class="submenu clear-float" id="default-submenu">
+            <li>
+                <a href="index.php">首页</a>
+            </li>
+        </ul>
         <ul class="submenu clear-float" data-type="overview">
             <li>
                 <a href="description.php">课程描述</a>
@@ -76,6 +81,7 @@
             <li>
                 <a href="video_download.php">相关视频</a>
             </li>
+
         </ul>
         <ul class="submenu clear-float" data-type="lab">
             <li>
