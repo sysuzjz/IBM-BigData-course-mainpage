@@ -13,8 +13,8 @@
         return isset($_SESSION["level"]) && $_SESSION["level"] == 1;
     }
 
-    function getOverview() {
-        return ActionModel::getOverview();
+    function getContent($type) {
+        return ActionModel::getContent($type);
     }
 
     function getInforms() {

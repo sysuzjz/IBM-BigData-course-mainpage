@@ -6,3 +6,7 @@
 .subhead {
     padding: 20px 0;
 }
+
+#edit-container {
+    display: none;
+}

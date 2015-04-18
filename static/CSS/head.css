@@ -60,7 +60,7 @@
     font-size: 16px;
 }
 #default-submenu {
-    display: block;
+    display: inline-block;
     visibility: hidden;
 }
 

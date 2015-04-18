@@ -46,10 +46,10 @@
                 <a href="#" data-type="test">考核内容</a>
             </li>
             <li>
-                <a href="references.php">参考资料</a>
+                <a href="reference.php">参考资料</a>
             </li>
             <li>
-                <a href="resources.php">网上资源</a>
+                <a href="resource.php">网上资源</a>
             </li>
             <li>
                 <a href="assessment.php">学生评价</a>

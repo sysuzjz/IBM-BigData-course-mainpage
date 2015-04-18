@@ -19,3 +19,9 @@ function createForm(func, id) {
     form.innerHTML = content;
     return form;
 }
+
+delegate(document, ".edit-btn", "click", function(event) {
+    event.preventDefault();
+    hideElementById("content-container");
+    showElementById("edit-container");
+})

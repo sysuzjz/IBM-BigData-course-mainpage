@@ -1,0 +1,2 @@
+php.ini 中，post_max_size 改为 2048M，upload_max_filesize 改为 2048M。
+httpd.conf中，LoadModule expires_module modules/mod_expires.so一行前面的注释去掉，LoadModule rewrite_module modules/mod_rewrite.so一行前面的注释去掉
