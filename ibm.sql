@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- 主机: localhost
--- 生成日期: 2015 年 04 月 19 日 02:20
+-- 生成日期: 2015 年 04 月 19 日 03:28
 -- 服务器版本: 5.6.12-log
 -- PHP 版本: 5.4.12
 
@@ -25,6 +25,20 @@ USE `ibm`;
 -- --------------------------------------------------------
 
 --
+-- 表的结构 `comment`
+--
+
+CREATE TABLE IF NOT EXISTS `comment` (
+  `id` int(10) NOT NULL AUTO_INCREMENT,
+  `author` varchar(40) CHARACTER SET utf8 NOT NULL,
+  `content` text CHARACTER SET utf8 NOT NULL,
+  `time` varchar(10) CHARACTER SET utf8 NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8 ;
+
+-- --------------------------------------------------------
+
+--
 -- 表的结构 `content`
 --
 
@@ -41,7 +55,7 @@ CREATE TABLE IF NOT EXISTS `content` (
 --
 
 INSERT INTO `content` (`id`, `type`, `content`, `time`) VALUES
-(1, 'description', '', '1429438127'),
+(1, 'description', '', '1429440429'),
 (2, 'summary', '', '1429353051'),
 (3, 'plan', '', '1429354427'),
 (4, 'outline', '', '1429096418'),
@@ -57,7 +71,7 @@ INSERT INTO `content` (`id`, `type`, `content`, `time`) VALUES
 (14, 'simulating1', '', '1429096418'),
 (15, 'simulating2', '', '1429096418'),
 (16, 'reference', '', '1429096418'),
-(17, 'assessment', '', '1429096418'),
+(17, 'assessment', '<p>å¯ä»¥åœ¨ä¸‹é¢å‘è¡¨è¯„è®º</p>', '1429442888'),
 (18, 'resource', '', '1429096418'),
 (19, 'teacher', '', '1429096418');
 
@@ -73,7 +87,7 @@ CREATE TABLE IF NOT EXISTS `inform` (
   `content` text NOT NULL,
   `time` varchar(10) CHARACTER SET utf8 NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
 
 -- --------------------------------------------------------
 

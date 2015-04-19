@@ -125,7 +125,7 @@
     </div>
     <div id="bodybox">
         <div id="login">
-            <form action="../presenter/admin.action.php" method="post">
+            <form action="../presenter/public.action.php" method="post">
                 <input type="hidden" name="func" value="login" />
                 <div>
                     <label class="inform">用户名：</label>

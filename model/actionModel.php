@@ -52,5 +52,16 @@
             $result = delete($table, $cond);
             return $result;
         }
+
+        public static function getComments() {
+            $result = select("comment");
+            return $result;
+        }
+
+        public static function insertComment($author, $content, $time) {
+            $data = array("author" => $author, "content" => $content, "time" => $time);
+            $result = insert("comment", $data);
+            return $result;
+        }
     }
 ?>
