@@ -68,8 +68,10 @@
             $queryStr = $queryStr.$key."="."'".$value."'";
         }
         $count = 0;
-        $queryStr = $queryStr." WHERE ";
         foreach ($cond as $key => $value) {
+            if($count == 0) {
+                $queryStr = $queryStr." WHERE ";
+            }
             if($count > 0) {
                 $queryStr = $queryStr." AND ";
             }
@@ -77,8 +79,10 @@
             $queryStr = $queryStr.$key."="."'".$value."'";
         }
         $queryResult = mysql_query($queryStr);
+        $queryResult = mysql_affected_rows();
         setSqlError();
-        return $queryResult ? 1 : 0;
+        // return $queryResult > 0 ? 1 : 0;
+        return $queryStr;
     }
 
     function insert($table, $data) {

@@ -77,6 +77,22 @@
         return array("status" => !empty($result), "isRedirect" => true, "redirectTime" => 2);
     }
 
+    function getPV() {
+        $cond = array();
+        return ActionModel::getPageview($cond);
+    }
+
+    function updatePV() {
+        $time = time() + TIMEOFFSET;
+        $year = date("Y", $time);
+        $month = date("m", $time);
+        ActionModel::updatePageview($year, $month);
+    }
+
+    // function getRemoteIP() {
+    //     return getenv("HTTP_X_FORWARDED_FOR") ? getenv("HTTP_X_FORWARDED_FOR") : $_SERVER["REMOTE_ADDR"];
+    // }
+
     function redirectErrorPage($errorMsg, $redirectTime, $redirectUrl = "./") {
         setcookie("errorMsg", $errorMsg, time() + 60, "/");
         setcookie("redirectTime", $redirectTime, time() + 60, "/");

@@ -63,5 +63,28 @@
             $result = insert("comment", $data);
             return $result;
         }
+
+        public static function getPageview($cond) {
+            $result = select("pageview", "count", $cond);
+            $sum = 0;
+            for($i = 0, $len = count($result); $i < $len; $i++) {
+                $sum += intval($result[$i]["count"]);
+            }
+            return $sum;
+        }
+
+        public static function updatePageview($year, $month) {
+            $cond = array("year" => $year, "month" => $month);
+            $count = select("pageview", "count", $cond, "", 1);
+            if(!empty($count)) {
+                $count = intval($count[0]["count"]) + 1;
+                $data = array("count" => $count);
+                $result = update("pageview", $data, $cond);
+            } else {
+                $data = array("count" => 1, "year" => $year, "month" => $month);
+                $result = insert("pageview", $data);
+            }
+            return $result;
+        }
     }
 ?>

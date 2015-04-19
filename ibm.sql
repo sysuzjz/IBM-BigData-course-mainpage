@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- 主机: localhost
--- 生成日期: 2015 年 04 月 19 日 03:28
+-- 生成日期: 2015 年 04 月 19 日 07:01
 -- 服务器版本: 5.6.12-log
 -- PHP 版本: 5.4.12
 
@@ -34,7 +34,7 @@ CREATE TABLE IF NOT EXISTS `comment` (
   `content` text CHARACTER SET utf8 NOT NULL,
   `time` varchar(10) CHARACTER SET utf8 NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8 ;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -87,7 +87,21 @@ CREATE TABLE IF NOT EXISTS `inform` (
   `content` text NOT NULL,
   `time` varchar(10) CHARACTER SET utf8 NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `pageview`
+--
+
+CREATE TABLE IF NOT EXISTS `pageview` (
+  `id` int(10) NOT NULL AUTO_INCREMENT,
+  `count` int(10) NOT NULL DEFAULT '0',
+  `year` varchar(4) NOT NULL,
+  `month` varchar(2) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=21 ;
 
 -- --------------------------------------------------------
 

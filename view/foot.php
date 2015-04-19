@@ -3,9 +3,8 @@
         </div>
         <div id="footer">
             <?php 
-                $PV = isset($_COOKIE["PV"]) ? intval($_COOKIE["PV"]) : 0;
-                $PV++;
-                setcookie("PV", $PV, time() + TIMEOFFSET + SESSION_LIFETIME, PATH);
+                $PV = getPV();
+                updatePV();
             ?>
             <p class="align-center">网站访问量：<?=$PV?></p>
         </div>
