@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- 主机: localhost
--- 生成日期: 2015 年 04 月 18 日 05:35
+-- 生成日期: 2015 年 04 月 19 日 02:20
 -- 服务器版本: 5.6.12-log
 -- PHP 版本: 5.4.12
 
@@ -34,16 +34,16 @@ CREATE TABLE IF NOT EXISTS `content` (
   `content` text CHARACTER SET utf8 NOT NULL,
   `time` varchar(10) CHARACTER SET utf8 NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=19 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=20 ;
 
 --
 -- 转存表中的数据 `content`
 --
 
 INSERT INTO `content` (`id`, `type`, `content`, `time`) VALUES
-(1, 'description', '<p>test</p>', '1429353039'),
-(2, 'summary', '<p>å†…å®¹ç®€ä»‹</p>', '1429353051'),
-(3, 'plan', '<p><img src="/ueditor/php/upload/image/panda.jpg" title="panda.jpg" alt="panda.jpg"/></p><p style="line-height: 16px;"><img style="vertical-align: middle; margin-right: 2px;" src="http://localhost/IBM-BigData-course-mainpage/lib/ueditor/dialogs/attachment/fileTypeImages/icon_jpg.gif"/><a style="font-size:12px; color:#0066cc;" href="/ueditor/php/upload/file/panda.jpg" title="panda.jpg">panda.jpg</a></p><p style="line-height: 16px;"><img style="vertical-align: middle; margin-right: 2px;" src="http://localhost/IBM-BigData-course-mainpage/lib/ueditor/dialogs/attachment/fileTypeImages/icon_jpg.gif"/><a style="font-size:12px; color:#0066cc;" href="/ueditor/php/upload/file/panda.jpg" title="panda.jpg">panda.jpg</a></p><p><br/></p>', '1429354427'),
+(1, 'description', '', '1429438127'),
+(2, 'summary', '', '1429353051'),
+(3, 'plan', '', '1429354427'),
 (4, 'outline', '', '1429096418'),
 (5, 'ppt_download', '', '1429096418'),
 (6, 'video_download', '', '1429096418'),
@@ -58,7 +58,8 @@ INSERT INTO `content` (`id`, `type`, `content`, `time`) VALUES
 (15, 'simulating2', '', '1429096418'),
 (16, 'reference', '', '1429096418'),
 (17, 'assessment', '', '1429096418'),
-(18, 'resource', '', '1429096418');
+(18, 'resource', '', '1429096418'),
+(19, 'teacher', '', '1429096418');
 
 -- --------------------------------------------------------
 

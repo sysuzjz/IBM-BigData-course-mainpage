@@ -6,7 +6,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>课程网站</title>
+    <title>商业分析和大数据基础实践（基于Power系统）</title>
     <link rel="stylesheet" type="text/css" href="<?=$DIR['CSS']?>public.css" />
     <link rel="stylesheet" type="text/css" href="<?=$DIR['CSS']?>head.css" />
     <link rel="stylesheet" type="text/css" href="<?=$DIR['CSS']?>body.css" />
@@ -15,7 +15,7 @@
     <div id="cover"></div>
     <div id="header">
         <div class="container">
-            <h1 id="head-title">课程信息网</h1>
+            <h1 id="head-title">商业分析和大数据基础实践（基于Power系统）</h1>
             <?php if(!isLogin()) { ?>
                 <div class="float-right">
                     <button id="button-login">教师登录</button>
@@ -31,7 +31,10 @@
     <div id="menu-container" class="container">
         <ul id="menu" class="clear-float">
             <li>
-                <a href="#" data-type="overview">课程概括</a>
+                <a href="informs.php">通知</a>
+            </li>
+            <li>
+                <a href="#" data-type="overview">课程概况</a>
             </li>
             <li>
                 <a href="#" data-type="download">课堂教案</a>
@@ -63,6 +66,9 @@
         <ul class="submenu clear-float" data-type="overview">
             <li>
                 <a href="description.php">课程描述</a>
+            </li>
+            <li>
+                <a href="teacher.php">教师信息</a>
             </li>
             <li>
                 <a href="summary.php">内容简介</a>
