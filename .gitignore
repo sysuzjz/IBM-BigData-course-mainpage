@@ -1,3 +1,4 @@
 upload/*
 *.doc
+model/setting.php
 !.gitignore

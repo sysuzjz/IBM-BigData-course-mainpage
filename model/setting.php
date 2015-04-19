@@ -1,7 +1,7 @@
 <?php
     $setting = array(
         "DOMAIN" => "localhost",                    // 域名
-        "PATH" => "/IBM-BigData-course-mainpage",   // 路径
+        "PATH" => "/IBM",   // 路径
         "SESSION_NAME" => "ibm",                    // session name 设置
         "SESSION_LIFETIME" => 3600 * 24 * 30,       // 自动登录时效，单位秒
         "SQL_ADDRESS" => "localhost",               // 数据库地址，值为IP或localhost(127.0.0.1)
