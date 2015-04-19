@@ -10,6 +10,7 @@
     <link rel="stylesheet" type="text/css" href="<?=$DIR['CSS']?>public.css" />
     <link rel="stylesheet" type="text/css" href="<?=$DIR['CSS']?>head.css" />
     <link rel="stylesheet" type="text/css" href="<?=$DIR['CSS']?>body.css" />
+    <link rel="stylesheet" type="text/css" href="<?=$DIR['CSS']?>foot.css" />
 </head>
 <body>
     <div id="cover"></div>

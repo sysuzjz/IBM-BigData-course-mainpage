@@ -1,6 +1,14 @@
         
             </div>
         </div>
+        <div id="footer">
+            <?php 
+                $PV = isset($_COOKIE["PV"]) ? intval($_COOKIE["PV"]) : 0;
+                $PV++;
+                setcookie("PV", $PV, time() + TIMEOFFSET + SESSION_LIFETIME, PATH);
+            ?>
+            <p class="align-center">网站访问量：<?=$PV?></p>
+        </div>
     </body>
     <script type="text/javascript" src="../lib/ueditor/ueditor.config.js"></script>
     <!-- 编辑器源码文件 -->
