@@ -3,8 +3,8 @@
         </div>
         <div id="footer">
             <?php 
-                $PV = getPV();
                 updatePV();
+                $PV = getPV();
             ?>
             <p class="align-center">网站访问量：<?=$PV?></p>
         </div>

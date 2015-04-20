@@ -1,12 +1,15 @@
 // 绑定删除按钮函数
 var tableNode = document.getElementById('table-container');
-delegate(tableNode, ".delete-btn", "click", function(event) {
-    event.preventDefault();
-    var func = tableNode.getAttribute("data-func"),
-        id = event.target.getAttribute("data-id");
-    var form = createForm(func, id);
-    form.submit();
-})
+if(tableNode) {
+    delegate(tableNode, ".delete-btn", "click", function(event) {
+        event.preventDefault();
+        var target = getEventTarget(event);
+        var func = tableNode.getAttribute("data-func"),
+            id = target.getAttribute("data-id");
+        var form = createForm(func, id);
+        form.submit();
+    })
+}
 
 function createForm(func, id) {
     var form = document.createElement("form");
@@ -20,7 +23,8 @@ function createForm(func, id) {
     return form;
 }
 
-delegate(document, ".edit-btn", "click", function(event) {
+var bodyboxNode = document.getElementById("bodybox");
+delegate(bodyboxNode, ".edit-btn", "click", function(event) {
     event.preventDefault();
     hideElementById("content-container");
     showElementById("edit-container");

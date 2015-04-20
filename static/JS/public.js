@@ -16,30 +16,35 @@ function addClassName(node, className) {
     }
 }
 
-function addEvent(type, callback) {  
+function getEventTarget(event) {
+    return event.target || event.srcElement;
+}
+function addEvent(node, type, callback) {  
     if (window.attachEvent) { // IE  
-        this.attachEvent.call(this, "on" + type, callback);  
+        console.log(node);
+        node.attachEvent("on" + type, callback);  
     } else if (window.addEventListener) {  
-        this.addEventListener.call(this, type, callback, false);  
+        node.addEventListener( type, callback, false);  
     } else {  
         alert("无法绑定事件，请反馈给管理员");  
-    }  
-    return this;  
+    }
+    return node;  
 }
 function delegate(node, childNodeSelector, eventType, func) {
-    addEvent.call(node, eventType, function(event) {
+    addEvent(node, eventType, function(event) {
+        var target = getEventTarget(event);
         if(isClassSelector(childNodeSelector)) {
             var className = splitSelector(childNodeSelector)["className"];
-            if(hasClass(event.target, className)) {
+            if(hasClass(target, className)) {
                 func(event);
             }
         } else if(isIdSelector(childNodeSelector)) {
             var id = splitSelector(childNodeSelector)["id"];
-            if(event.target.id == id) {
+            if(target.id == id) {
                 func(event);
             }
         } else {
-            if(event.target.nodeName.toLowerCase() == childNodeSelector.toLowerCase()) {
+            if(target.nodeName.toLowerCase() == childNodeSelector.toLowerCase()) {
                 func(event);
             }
         }

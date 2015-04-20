@@ -22,10 +22,11 @@ function hideLogin() {
 
 var menuNode = document.getElementById("menu");
 delegate(menuNode, "a", "mouseover", function(event) {
-    var type = event.target.getAttribute("data-type"),
+    var target = getEventTarget(event);
+    var type = target.getAttribute("data-type"),
         submenus = getChildNodes(menuNode.parentNode, ".submenu"),
-        offsetLeft = event.target.offsetLeft,
-        menuLiWidth = getWidth(event.target);
+        offsetLeft = target.offsetLeft,
+        menuLiWidth = getWidth(target);
     each(submenus, function() {
         setStyle(this, "display", "none");
         if(this.getAttribute("data-type") == type) {
