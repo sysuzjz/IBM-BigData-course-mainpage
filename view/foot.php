@@ -6,7 +6,8 @@
                 updatePV();
                 $PV = getPV();
             ?>
-            <p class="align-center">网站访问量：<?=$PV?></p>
+            <p class="float-right">网站访问量：<?=$PV?></p>
+            <p class="align-center">Copyright &copy; 2015 - 2025 IBM</p>
         </div>
     </body>
     <script type="text/javascript" src="../lib/ueditor/ueditor.config.js"></script>

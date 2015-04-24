@@ -15,9 +15,9 @@
     function updateInform($param) {
         $time = time() + TIMEOFFSET;
         if(!isset($param["id"]) || empty($param["id"])) {
-            $result = ActionModel::insertInform($param["title"], $param["content"], $time);
+            $result = ActionModel::insertInform($param["type"], $param["title"], $param["content"], $time);
         } else {
-            $result = ActionModel::updateInformById($param["id"], $param["title"], $param["content"], $time);
+            $result = ActionModel::updateInformById($param["id"], $param["type"], $param["title"], $param["content"], $time);
         }
         return array("status" => $result, "isRedirect" => true, "redirectUrl" => "../view/informs.php");
     }

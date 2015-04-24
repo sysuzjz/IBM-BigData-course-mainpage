@@ -35,10 +35,8 @@ delegate(menuNode, "a", "mouseover", function(event) {
                 parentWidth = getWidth(this.parentNode),
                 left = offsetLeft + menuLiWidth / 2 - currentWidth / 2;
             if(left < 0) { // 超出左侧
-                console.log(1);
                 setStyle(this, "left", 0);
             } else if(menuLiWidth / 2 + currentWidth / 2 > parentWidth) { // 超出右侧
-                console.log("2");
                 setStyle(this, "right", 0);
             } else {
                 setStyle(this, "left", left);

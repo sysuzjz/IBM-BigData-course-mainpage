@@ -44,8 +44,8 @@
         return ActionModel::getContent($type);
     }
 
-    function getInforms() {
-        $informs = ActionModel::getInforms();
+    function getInforms($type) {
+        $informs = ActionModel::getInforms($type);
         return $informs;
     }
 

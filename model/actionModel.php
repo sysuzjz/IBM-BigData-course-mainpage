@@ -13,8 +13,9 @@
             return $result;
         }
 
-        public static function getInforms() {
-            $result = select("inform", "*", "", "time DESC");
+        public static function getInforms($type) {
+            $con = array("type" => $type);
+            $result = select("inform", "*", $con, "time DESC");
             return $result;
         }
 
@@ -24,15 +25,15 @@
             return !empty($result) ? $result[0] : $result;
         }
 
-        public static function updateInformById($id, $title, $content, $time) {
-            $data = array("title" => $title, "content" => $content, "time" => $time);
+        public static function updateInformById($id, $type, $title, $content, $time) {
+            $data = array("type" => $type, "title" => $title, "content" => $content, "time" => $time);
             $con = array("id" => $id);
             $result = update("inform", $data, $con);
             return $result;
         }
 
-        public static function insertInform($title, $content, $time) {
-            $data = array("title" => $title, "content" => $content, "time" => $time);
+        public static function insertInform($type, $title, $content, $time) {
+            $data = array("type" => $type, "title" => $title, "content" => $content, "time" => $time);
             $result = insert("inform", $data);
             return $result;
         }

@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- 主机: localhost
--- 生成日期: 2015 年 04 月 19 日 07:01
+-- 生成日期: 2015 年 04 月 24 日 05:51
 -- 服务器版本: 5.6.12-log
 -- PHP 版本: 5.4.12
 
@@ -34,7 +34,14 @@ CREATE TABLE IF NOT EXISTS `comment` (
   `content` text CHARACTER SET utf8 NOT NULL,
   `time` varchar(10) CHARACTER SET utf8 NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+
+--
+-- 转存表中的数据 `comment`
+--
+
+INSERT INTO `comment` (`id`, `author`, `content`, `time`) VALUES
+(1, 'åŒ¿å', '&lt;script&gt;alert(&quot;hahh&quot;);&lt;/script&gt;', '1429486905');
 
 -- --------------------------------------------------------
 
@@ -83,11 +90,20 @@ INSERT INTO `content` (`id`, `type`, `content`, `time`) VALUES
 
 CREATE TABLE IF NOT EXISTS `inform` (
   `id` int(10) NOT NULL AUTO_INCREMENT,
+  `type` int(2) NOT NULL DEFAULT '0',
   `title` text CHARACTER SET utf8 NOT NULL,
   `content` text NOT NULL,
   `time` varchar(10) CHARACTER SET utf8 NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
+
+--
+-- 转存表中的数据 `inform`
+--
+
+INSERT INTO `inform` (`id`, `type`, `title`, `content`, `time`) VALUES
+(4, 1, 'è¿™æ˜¯ä¸€åˆ™æ–°é—»', '<p>æ–°é—»æ–°é—»</p>', '1429883306'),
+(5, 0, 'è¿™æ˜¯ä¸€ç¯‡é€šçŸ¥', '<p>sæ’’çš„å‘</p>', '1429883132');
 
 -- --------------------------------------------------------
 
@@ -101,7 +117,14 @@ CREATE TABLE IF NOT EXISTS `pageview` (
   `year` varchar(4) NOT NULL,
   `month` varchar(2) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=21 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=22 ;
+
+--
+-- 转存表中的数据 `pageview`
+--
+
+INSERT INTO `pageview` (`id`, `count`, `year`, `month`) VALUES
+(21, 188, '2015', '04');
 
 -- --------------------------------------------------------
 

@@ -31,7 +31,7 @@
             <textarea name="content" required="required"></textarea>
             <input type="submit" value="submit" />
         </form>
-        <table id="table-container" data-func="deleteComment">
+        <table class="table-container" data-func="deleteComment">
             <?php foreach ($comments as $comment) { ?>
                 <tr>
                     <?php if(isLogin()) { ?>

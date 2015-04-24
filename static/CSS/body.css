@@ -30,3 +30,16 @@
     font-size: 20px;
     resize: none;
 }
+
+#inform-container {
+    float: left;
+    width: 39%;
+    padding: 0px 5%;
+    border-right: 1px solid #e3e1d9;
+}
+
+#news-container {
+    float: left;
+    width: 39%;
+    padding: 0px 5%;
+}

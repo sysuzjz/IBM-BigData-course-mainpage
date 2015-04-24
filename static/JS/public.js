@@ -33,20 +33,8 @@ function addEvent(node, type, callback) {
 function delegate(node, childNodeSelector, eventType, func) {
     addEvent(node, eventType, function(event) {
         var target = getEventTarget(event);
-        if(isClassSelector(childNodeSelector)) {
-            var className = splitSelector(childNodeSelector)["className"];
-            if(hasClass(target, className)) {
-                func(event);
-            }
-        } else if(isIdSelector(childNodeSelector)) {
-            var id = splitSelector(childNodeSelector)["id"];
-            if(target.id == id) {
-                func(event);
-            }
-        } else {
-            if(target.nodeName.toLowerCase() == childNodeSelector.toLowerCase()) {
-                func(event);
-            }
+        if(isSelector(target, childNodeSelector)) {
+            func(event);
         }
     })
 }
@@ -86,7 +74,7 @@ function getChildNodesByTagName(node, tagName) {
     var childNodes = getAllChildNodes(node),
         result = Array();
     for(var i = 0, len = childNodes.length; i < len; i++) {
-        if(childNodes[i].nodeName.toLowerCase() == tagName.toLowerCase()) {
+        if(isSelector(childNodes[i], tagName)) {
             result.push(childNodes[i]);
         }
     }
@@ -193,4 +181,27 @@ function inArray(arr, value) {
         }
     }
     return false;
+}
+
+function closestNode(node, selector) {
+    var currentNode = node;
+    while(currentNode != document) {
+        if(isSelector(currentNode, selector)) {
+            return currentNode;
+        }
+        currentNode = currentNode.parentNode;
+    }
+    return null;
+}
+
+function isSelector(node, selector) {
+    if(isClassSelector(selector)) {
+        var className = splitSelector(selector)["className"];
+        return hasClass(node, className);
+    } else if(isIdSelector(selector)) {
+        var id = splitSelector(selector)["id"];
+        return node.id === id;
+    } else {
+        return node.tagName.toLowerCase() === selector.toLowerCase();
+    }
 }
