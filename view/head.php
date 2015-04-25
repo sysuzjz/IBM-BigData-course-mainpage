@@ -31,6 +31,7 @@
     <div id="header">
         <div class="container">
             <h1 id="head-title">商业分析和大数据基础实践（基于Power系统）</h1>
+            <h2></h2>
             <?php if(!isLogin()) { ?>
                 <div class="float-right">
                     <button id="button-login">教师登录</button>

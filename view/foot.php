@@ -7,7 +7,7 @@
                 $PV = getPV();
             ?>
             <p class="float-right">网站访问量：<?=$PV?></p>
-            <p class="align-center">Copyright &copy; 2015 - 2025 IBM</p>
+            <p class="align-center">Copyright &copy; 2015 - 2020 中山大学东校区实验教学中心</p>
         </div>
     </body>
     <script type="text/javascript" src="../lib/ueditor/ueditor.config.js"></script>
