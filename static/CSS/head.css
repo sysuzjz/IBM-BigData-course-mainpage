@@ -15,12 +15,14 @@
     font-size: 36px;
     margin: 20px 0;
     padding-left: 60px;
+    font-family: "楷体";
 }
 
 #sub-head-title {
     margin: 10px;
     font-size: 20px;
     text-align: left;
+    font-family: "楷体";
 }
 
 #button-login, #button-logout {
