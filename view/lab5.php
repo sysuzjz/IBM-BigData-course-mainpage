@@ -1,8 +1,8 @@
 <?php
     include_once("./head.php");
-    $content = getContent("lab4");
+    $content = getContent("lab5");
 ?>
-    <h2>大数据技术</h2>
+    <h2>大数据系统平台</h2>
     <div class="subhead clear-float">
         <?php if(isTeacher()) { ?>
             <a href="#" class="float-left edit-btn">编辑</a>
@@ -17,7 +17,7 @@
         <div id="edit-container">
             <form action="../presenter/admin.action.php" method="post">
                 <input type="hidden" name="func" value="updateContent" />
-                <input type="hidden" name="type" value="lab4" />
+                <input type="hidden" name="type" value="lab5" />
                 <script id="container" name="content" type="text/plain"><?=$content['content']?></script>
                 <input type="submit" value="提交" />
             </form>

@@ -30,8 +30,6 @@
     <div id="cover"></div>
     <div id="header">
         <div class="container">
-            <h1 id="head-title">商业分析和大数据基础实践（基于Power系统）</h1>
-            <h2></h2>
             <?php if(!isLogin()) { ?>
                 <div class="float-right">
                     <button id="button-login">教师登录</button>
@@ -42,6 +40,8 @@
                     <input type="submit" value="退出登录" id="button-logout" />
                 </form>
             <?php } ?>
+            <h2 id="sub-head-title">教育部－IBM产学合作专业综合改革项目建设课程</h2>
+            <h1 id="head-title">商业分析和大数据基础实践（基于Power系统）</h1>
         </div>
     </div>
     <div id="menu-container" class="container">
@@ -116,7 +116,10 @@
                 <a href="lab3.php">商务智能</a>
             </li>
             <li>
-                <a href="lab4.php">大数据处理</a>
+                <a href="lab4.php">大数据技术</a>
+            </li>
+            <li>
+                <a href="lab5.php">大数据系统平台</a>
             </li>
         </ul>
         <ul class="submenu clear-float" data-type="homework">

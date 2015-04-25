@@ -6,14 +6,21 @@
 
 #header {
     color: #858278;
-    height: 111px;
+    /*height: 111px;*/
     padding-top: 10px;
     overflow: hidden;
 }
 
 #head-title {
-    display: inline-block;
-    font-size: 40px;
+    font-size: 36px;
+    margin: 10px 0;
+    text-align: center;
+}
+
+#sub-head-title {
+    margin: 0px;
+    font-size: 20px;
+    text-align: left;
 }
 
 #button-login, #button-logout {
@@ -39,6 +46,10 @@
     padding: 10px;
     font-size: 20px;
     text-align: center;
+}
+
+#menu-container li a {
+    color: #7278D8;
 }
 
 

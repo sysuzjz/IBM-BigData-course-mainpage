@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- 主机: localhost
--- 生成日期: 2015 年 04 月 24 日 05:51
+-- 生成日期: 2015 年 04 月 25 日 02:49
 -- 服务器版本: 5.6.12-log
 -- PHP 版本: 5.4.12
 
@@ -34,14 +34,15 @@ CREATE TABLE IF NOT EXISTS `comment` (
   `content` text CHARACTER SET utf8 NOT NULL,
   `time` varchar(10) CHARACTER SET utf8 NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
 
 --
 -- 转存表中的数据 `comment`
 --
 
 INSERT INTO `comment` (`id`, `author`, `content`, `time`) VALUES
-(1, 'åŒ¿å', '&lt;script&gt;alert(&quot;hahh&quot;);&lt;/script&gt;', '1429486905');
+(1, 'åŒ¿å', '&lt;script&gt;alert(&quot;hahh&quot;);&lt;/script&gt;', '1429486905'),
+(2, 'test', 'test', '1429955095');
 
 -- --------------------------------------------------------
 
@@ -55,7 +56,7 @@ CREATE TABLE IF NOT EXISTS `content` (
   `content` text CHARACTER SET utf8 NOT NULL,
   `time` varchar(10) CHARACTER SET utf8 NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=20 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=21 ;
 
 --
 -- 转存表中的数据 `content`
@@ -80,7 +81,8 @@ INSERT INTO `content` (`id`, `type`, `content`, `time`) VALUES
 (16, 'reference', '', '1429096418'),
 (17, 'assessment', '<p>å¯ä»¥åœ¨ä¸‹é¢å‘è¡¨è¯„è®º</p>', '1429442888'),
 (18, 'resource', '', '1429096418'),
-(19, 'teacher', '', '1429096418');
+(19, 'teacher', '', '1429096418'),
+(20, 'lab5', '', '1429096418');
 
 -- --------------------------------------------------------
 
@@ -102,8 +104,7 @@ CREATE TABLE IF NOT EXISTS `inform` (
 --
 
 INSERT INTO `inform` (`id`, `type`, `title`, `content`, `time`) VALUES
-(4, 1, 'è¿™æ˜¯ä¸€åˆ™æ–°é—»', '<p>æ–°é—»æ–°é—»</p>', '1429883306'),
-(5, 0, 'è¿™æ˜¯ä¸€ç¯‡é€šçŸ¥', '<p>sæ’’çš„å‘</p>', '1429883132');
+(4, 1, 'è¿™æ˜¯ä¸€åˆ™æ–°é—»', '<p>æ–°é—»æ–°é—»</p>', '1429883306');
 
 -- --------------------------------------------------------
 
@@ -124,7 +125,7 @@ CREATE TABLE IF NOT EXISTS `pageview` (
 --
 
 INSERT INTO `pageview` (`id`, `count`, `year`, `month`) VALUES
-(21, 188, '2015', '04');
+(21, 286, '2015', '04');
 
 -- --------------------------------------------------------
 
