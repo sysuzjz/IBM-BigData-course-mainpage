@@ -13,12 +13,12 @@
 
 #head-title {
     font-size: 36px;
-    margin: 10px 0;
-    text-align: center;
+    margin: 20px 0;
+    padding-left: 60px;
 }
 
 #sub-head-title {
-    margin: 0px;
+    margin: 10px;
     font-size: 20px;
     text-align: left;
 }
