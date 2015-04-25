@@ -3,7 +3,7 @@
     $informs = getInforms(0);
     $newses = getInforms(1);
 ?>
-    <section id="inform-container">
+    <div id="inform-container">
         <h2>通知列表</h2>
         <?php if(isTeacher()) { ?>
             <div class="subhead clear-float">
@@ -35,8 +35,8 @@
                 <?php } ?>
             </tbody>
         </table>
-    </section>
-    <section id="news-container">
+    </div>
+    <div id="news-container">
         <h2>新闻列表</h2>
         <?php if(isTeacher()) { ?>
             <div class="subhead clear-float">
@@ -68,6 +68,11 @@
                 <?php } ?>
             </tbody>
         </table>
-    </section>
+    </div>
+    <form action="../presenter/admin.action.php" method="post" id="delete-form">
+        <input type="hidden" name="id" value="" />
+        <input type="hidden" name="func" value="" />
+        <input type="submit" value="submit" />
+    </form>
 
 <?php include_once("./foot.php"); ?>

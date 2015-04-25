@@ -20,8 +20,7 @@ function getEventTarget(event) {
     return event.target || event.srcElement;
 }
 function addEvent(node, type, callback) {  
-    if (window.attachEvent) { // IE  
-        console.log(node);
+    if (window.attachEvent) { // IE 
         node.attachEvent("on" + type, callback);  
     } else if (window.addEventListener) {  
         node.addEventListener( type, callback, false);  
@@ -203,5 +202,13 @@ function isSelector(node, selector) {
         return node.id === id;
     } else {
         return node.tagName.toLowerCase() === selector.toLowerCase();
+    }
+}
+
+function preventDefault(event) {
+    if(document.all) {
+        window.event.returnValue = false;
+    } else {
+        event.preventDefault();
     }
 }

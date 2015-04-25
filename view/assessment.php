@@ -46,6 +46,11 @@
                 </tr>
             <?php } ?>
         </table>
+        <form action="../presenter/admin.action.php" method="post" id="delete-form">
+            <input type="hidden" name="id" value="" />
+            <input type="hidden" name="func" value="" />
+            <input type="submit" value="submit" />
+        </form>
     </div>
 
 <?php include_once("./foot.php"); ?>

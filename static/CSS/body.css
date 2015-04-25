@@ -42,4 +42,9 @@
     float: left;
     width: 39%;
     padding: 0px 5%;
+    border-left: 1px solid #e3e1d9;
+}
+
+#delete-form {
+    display: none;
 }
