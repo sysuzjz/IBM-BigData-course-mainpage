@@ -11,6 +11,20 @@
     <link rel="stylesheet" type="text/css" href="<?=$DIR['CSS']?>head.css" />
     <link rel="stylesheet" type="text/css" href="<?=$DIR['CSS']?>body.css" />
     <link rel="stylesheet" type="text/css" href="<?=$DIR['CSS']?>foot.css" />
+    <script type="text/javascript">
+        /* 
+         * 检测IE版本
+         * 若IE版本低于8，则跳转
+        */
+        var isIE = !!window.ActiveXObject
+        var version = navigator.appVersion;
+        var version = version.split(";");  
+        var trimVersion = version[1].replace(/\s/g,""); 
+        if(isIE && (trimVersion=="MSIE6.0" || trimVersion == "MSIE7.0") ) {
+            alert("您的IE版本过低，请升级您的IE浏览器至IE8+或使用谷歌、火狐等高级浏览器");
+            window.location.href = "http://ie.microsoft.com";
+        }
+    </script>
 </head>
 <body>
     <div id="cover"></div>
