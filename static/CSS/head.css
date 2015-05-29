@@ -14,14 +14,15 @@
 #head-title {
     font-size: 36px;
     margin: 20px 0;
-    padding-left: 60px;
+    /*padding-left: 60px;*/
     font-family: "楷体";
+    text-align: center;
 }
 
 #sub-head-title {
     margin: 10px;
     font-size: 20px;
-    text-align: left;
+    text-align: center;
     font-family: "楷体";
 }
 

@@ -6,7 +6,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>商业分析和大数据基础实践（基于Power系统）</title>
+    <title>大数据分析基础实践</title>
     <link rel="stylesheet" type="text/css" href="<?=$DIR['CSS']?>public.css" />
     <link rel="stylesheet" type="text/css" href="<?=$DIR['CSS']?>head.css" />
     <link rel="stylesheet" type="text/css" href="<?=$DIR['CSS']?>body.css" />
@@ -41,7 +41,7 @@
                 </form>
             <?php } ?>
             <h2 id="sub-head-title">教育部－IBM产学合作专业综合改革项目建设课程</h2>
-            <h1 id="head-title">商业分析和大数据基础实践（基于Power系统）</h1>
+            <h1 id="head-title">大数据分析基础实践</h1>
         </div>
     </div>
     <div id="menu-container" class="container">
@@ -116,11 +116,11 @@
                 <a href="lab3.php">商务智能</a>
             </li>
             <li>
-                <a href="lab4.php">大数据技术</a>
+                <a href="lab4.php">大数据分析处理</a>
             </li>
-            <li>
+            <!-- <li>
                 <a href="lab5.php">大数据系统平台</a>
-            </li>
+            </li> -->
         </ul>
         <ul class="submenu clear-float" data-type="homework">
             <li>
