@@ -13,13 +13,8 @@
 
 #head-title {
     font-size: 36px;
-<<<<<<< HEAD
-    margin: 20px 0;
-    /*padding-left: 60px;*/
-=======
     margin: 25px 0;
-    padding-left: 60px;
->>>>>>> bf26948dd44edec430f7af8e4c197a6394294118
+    /*padding-left: 60px;*/
     font-family: "楷体";
     text-align: center;
 }
