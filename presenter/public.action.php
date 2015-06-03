@@ -83,10 +83,15 @@
     }
 
     function updatePV() {
+        if(isset($_SESSION['PV']) && $_SESSION['PV'] == 1) {
+            return;
+        }
         $time = time() + TIMEOFFSET;
         $year = date("Y", $time);
         $month = date("m", $time);
         ActionModel::updatePageview($year, $month);
+
+        $_SESSION['PV'] = 1;
     }
 
     // function getRemoteIP() {
